@@ -1,0 +1,18 @@
+.logo.slide{
+      transform: translateX(-100rem);
+      animation: slideIn .3s forwards;
+}
+
+nav ul li.slide {
+      transform: translateX(100rem);
+      animation: slideIn .6s forwards;
+}
+
+@keyframes slideIn {
+  from {
+
+  }
+  to {
+    transform: translateX(0);
+  }
+}

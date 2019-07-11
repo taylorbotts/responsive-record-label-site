@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,700');
+
+* {
+      box-sizing: border-box;
+}
+
+html {
+  background-color: #fefefe;
+}
+
+body {
+  font-family: 'Poppins';
+  background-color: #fefefe;
+}
+
+
+main {
+  opacity: 1;
+  transition: 1s opacity;
+  display: grid;
+  margin-top: 3rem;
+  font-size: 1.1rem;
+}
+
+main.fade-out {
+  opacity: 0;
+  transition: none;
+}
+
+main#home {
+  grid-template-columns: auto;
+}
+
+main#home p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+main#artists {
+  grid-template-columns: auto auto;
+  align-items: center;
+  grid-column-gap: 2.5%;
+  grid-row-gap: 10%;
+}
+
+main#artists .artist {
+  text-align: center;
+}
+
+main#artists .artist-bio {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+main#artists img {
+  width: 75%;
+}
+
+main#shows {
+  grid-template-columns: auto auto;
+  grid-gap: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.date {
+  text-align: center;
+  display: block;
+}
+
+.date h1 {
+  font-size: 5vw;
+}
+
+.date h2 {
+  font-size: 4vw;
+}
+
+main#merch {
+  grid-template-columns: auto auto auto auto;
+  text-align: center;
+  justify-content: center;
+  grid-gap: 7%;
+}
+
+nav {
+  padding: 1rem;
+  overflow: hidden;
+  background-color: #fefefe;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.logo {
+  position: absolute;
+  left: 3rem;
+
+}
+
+.logo a {
+  color: #000;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 0px;
+  text-decoration: none;
+}
+
+nav ul {
+  float: right;
+}
+
+nav ul li {
+  display: inline-block;
+  float: left;
+
+}
+
+@keyframes slideIn {
+  from {
+
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+nav ul li:not(:first-child) {
+  margin-left: 48px;
+}
+
+nav ul li:last-child {
+  margin-right: 24px;
+}
+
+nav ul li a {
+  display: inline-block;
+  outline: none;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.25rem;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: #d26a1d;
+}
+
+main {
+  padding: 1rem 10%;
+}
+
+@media screen and (max-width: 1000px){
+  main#merch {
+    grid-template-columns: auto auto;
+    grid-row-gap: 4%;
+  }
+}
+
+@media screen and (min-width: 701px){
+  .mobile-nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .logo {
+    padding: 0;
+    position: static;
+  }
+
+  .wide-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #111;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-nav ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  .mobile-nav ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
+  .mobile-nav ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+
+  .mobile-nav ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+
+  .mobile-nav ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+
+  .mobile-nav ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+
+  .mobile-nav ul li:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .mobile-nav ul li a {
+    padding: 10px 24px;
+    opacity: 0;
+    color: #fefefe;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transform: translateX(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav-btn {
+    position: fixed;
+    right: 1rem;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+
+  .nav-btn i {
+    display: block;
+    width: 30px;
+    height: 6px;
+    background: #000;
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+
+  .nav-btn i:nth-child(1) {
+    margin-top: 16px;
+  }
+
+  .nav-btn i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+
+  .nav-btn i:nth-child(3) {
+    margin-top: 4px;
+  }
+
+  main#artists {
+    grid-template-columns: auto;
+    grid-gap: 2.5%;
+  }
+
+  main#shows {
+    grid-template-columns: auto;
+    grid-gap: 10%;
+    text-align: center;
+  }
+
+  #shows div:not(.date){
+    position: relative;
+    bottom: 5rem;
+  }
+
+  .date h1 {
+    font-size: 3rem;
+  }
+
+  .date h2 {
+    font-size: 2.5rem;
+  }
+
+  main#merch {
+    grid-template-columns: auto;
+    grid-row-gap: 2%;
+  }
+}
+
+#nav:checked + .nav-btn {
+  transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i {
+  background: #fefefe;
+  transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+  transform: translateY(12px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+  opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+  transform: translateY(-8px) rotate(90deg);
+}
+
+#nav:checked ~ .mobile-nav {
+  z-index: 9990;
+  opacity: 1;
+}
+
+#nav:checked ~ .mobile-nav ul li a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  display: none;
+}
